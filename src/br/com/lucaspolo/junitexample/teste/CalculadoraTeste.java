@@ -30,6 +30,7 @@ public class CalculadoraTeste {
 	
 	@Test(expected=CalculadoraException.class)
 	public void divisaoTesteException() throws CalculadoraException{
+		@SuppressWarnings("unused")
 		double resultado;
 		resultado = calculadora.divisao(3, 0);
 	}
