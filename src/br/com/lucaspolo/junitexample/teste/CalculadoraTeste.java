@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.lucaspolo.junitexample.Calculadora;
+import br.com.lucaspolo.junitexample.CalculadoraException;
 
 public class CalculadoraTeste {
 	Calculadora calculadora;
@@ -25,5 +26,11 @@ public class CalculadoraTeste {
 	public void somaTestePontoFlutuante() {
 		double resultado = calculadora.soma(4.3, 2.2);
 		assertEquals(6.5, resultado, 0.1);
+	}
+	
+	@Test(expected=CalculadoraException.class)
+	public void divisaoTesteException() throws CalculadoraException{
+		double resultado;
+		resultado = calculadora.divisao(3, 0);
 	}
 }
